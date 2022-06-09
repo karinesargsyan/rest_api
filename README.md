@@ -18,5 +18,5 @@ pip install -r requirements.txt
 2. To see the allure report based on previews runs use this command line:
 $ allure serve report/
 
-3. To rerun test usi this command line:
+3. To rerun test use this command line:
 $ pytest -s tests/test_cases.py  --alluredir=report/
