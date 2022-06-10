@@ -116,10 +116,10 @@ def test_del_200():
         pytest.fail(e.args[0]) 
 
 @allure.title("Defined to delete all added information from the server")
-def clean_up_server():
+def test_clean_up_server():
     try:
         for i in request.get().json():
             request.delete(i["_id"])
-             
+        check.equal(len(request.get().json()), 0, "Server is not empty")     
     except ValueError as e:
         pytest.fail(e.args[0]) 
